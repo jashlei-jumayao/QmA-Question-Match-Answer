@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if ($user) {
         if (password_verify($password, $user['password'])) {
             $_SESSION['username'] = $user['username'];
+            $_SESSION['is_admin'] = ($user['is_admin'] === 't' || $user['is_admin'] === true);
             header("Location: dashboard.php");
             exit();
         }
