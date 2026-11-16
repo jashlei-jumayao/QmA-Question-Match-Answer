@@ -1,0 +1,40 @@
+body{
+    background: linear-gradient(-45deg, #4f46e5, #7c3aed, #ec4899, #3b82f6)
+}
+
+.Logo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  transition: all 0.2s ease-in-out;
+  scale: calc(0.9);
+}
+
+.Logo:hover {
+transform: rotate(3deg);
+filter: drop-shadow(0 3px 3px rgb(255, 240, 215));
+}
+
+.register_submit{
+  width: 100%;
+  padding: 0.85rem 1rem;
+  box-sizing: border-box;
+  
+  font-family:'Courier New', Courier, monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  
+  background-color: #8f1452;
+  border: none;
+  border-radius: 8px;
+
+  transition: background-color 0.2s ease-in-out;
+}
+
+.register_submit:hover{
+    color:#111827;
+    background-color: #e5e7eb;
+}

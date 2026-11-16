@@ -1,0 +1,30 @@
+body {
+    background: linear-gradient(-45deg, #4f46e5, #7c3aed, #ec4899, #3b82f6);
+}
+
+.Logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  scale: calc(0.9);
+}
+
+.Logo:hover {
+  transform: rotate(3deg);
+  filter: drop-shadow(0 3px 3px rgb(255, 240, 215));
+}
+
+.btn-login {
+    background-color: #8f1452;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.btn-login:hover {
+    background-color: #e5e7eb; 
+    color: #111827;            
+}
