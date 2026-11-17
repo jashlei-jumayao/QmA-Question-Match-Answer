@@ -28,22 +28,24 @@ while ($row = pg_fetch_assoc($result)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balatro Memory Game</title>
+    <title>QmA-Question-Match-Answer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="cards.css">
     <script>
         var dynamicCardList = <?php echo json_encode($dbCards); ?>;
     </script>
-    <script src ="cards.js"></script>
+    <script src="cards.js"></script>
 </head>
-    <body>
+<body>
 
         <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true): ?>
-            <div style="text-align: center; margin-top: 10px;">
-                <a href="admin.php" style="color: yellow; text-decoration: none; font-weight: bold;">⚙️ Admin: Upload Cards</a>
-            </div>
-        <?php endif; ?>
+        <div class="position-absolute top-0 end-0 p-3">
+            <a href="admin.php" class="btn btn-warning fw-bold shadow-sm d-flex align-items-center gap-1" style="border-radius: 8px;">
+                <span>⚙️</span> Upload Cards</a>
+        </div>
+    <?php endif; ?>
+    <h2 class="text-white mt-4">Errors: <span id="errors">0</span></h2>
+    <div id="board"></div>
 
-        <h2 style="color:white" >Errors: <span id="errors">0</span></h2>
-        <div id="board"></div>
-    </body>
+</body>
 </html>

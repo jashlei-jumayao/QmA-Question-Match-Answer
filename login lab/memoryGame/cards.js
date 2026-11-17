@@ -101,3 +101,49 @@ function update() {
 function playSound(){
     audio.play()
 }
+
+function flipCardAnimation(cardElement, newSrc) {
+    cardElement.classList.add("is-flipping");
+    setTimeout(() => {
+        cardElement.src = newSrc;
+        cardElement.classList.remove("is-flipping");
+    }, 150); // Matches half of the 0.15s transition
+}
+
+function selectCard() {
+    if (this.src.includes("back") && !this.classList.contains("is-flipping")) {
+        let coords = this.id.split("-");
+        let r = parseInt(coords[0]);
+        let c = parseInt(coords[1]);
+
+        if (!card1Selected) {
+            card1Selected = this;
+            flipCardAnimation(card1Selected, board[r][c].src + ".png"); 
+        }
+        else if (!card2Selected && this != card1Selected) {
+            card2Selected = this;
+            flipCardAnimation(card2Selected, board[r][c].src + ".png");
+            setTimeout(update, 1000);
+        }
+    }
+}
+
+function hideCards() {
+    for (let r = 0; r < rows; r++){
+        for (let c = 0; c < columns; c++){
+            let card = document.getElementById(r.toString() + "-" + c.toString());
+            flipCardAnimation(card, "back.png");
+        }
+    }
+}
+
+function update() {
+    if (card1Selected.dataset.pairId != card2Selected.dataset.pairId) {
+        flipCardAnimation(card1Selected, "back.png");
+        flipCardAnimation(card2Selected, "back.png");
+        errors += 1;
+        document.getElementById("errors").innerText = errors;
+    }
+    card1Selected = null;
+    card2Selected = null;
+}
