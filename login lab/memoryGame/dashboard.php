@@ -46,6 +46,10 @@ while ($row = pg_fetch_assoc($result)) {
     <?php endif; ?>
     <h2 class="text-white mt-4">Errors: <span id="errors">0</span></h2>
     <div id="board"></div>
+    <div id="gameStatus" class="text-white mt-3"></div>
 
+<a href="leaderboard.php" class="btn btn-warning mt-3">
+    View Leaderboard
+</a>
 </body>
 </html>

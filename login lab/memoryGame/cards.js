@@ -146,4 +146,106 @@ function update() {
     }
     card1Selected = null;
     card2Selected = null;
+    if (matchedPairs >= dynamicCardList.length) {
+    finishGame();
+    }
+}
+
+
+// LEADERBOARD ADDITIONS
+
+var matchedPairs = 0;
+var gameStartedAt = null;
+var scoreSubmitted = false;
+
+// Start the timer after the cards are hidden
+var originalHideCards = hideCards;
+
+hideCards = function() {
+    originalHideCards();
+    gameStartedAt = Date.now();
+};
+
+// Override update to track matched pairs and game completion
+function update() {
+
+    if (card1Selected.dataset.pairId != card2Selected.dataset.pairId) {
+
+        flipCardAnimation(card1Selected, "back.png");
+        flipCardAnimation(card2Selected, "back.png");
+
+        errors += 1;
+
+        document.getElementById("errors").innerText = errors;
+
+    } else {
+
+        matchedPairs++;
+        document.getElementById("gameStatus").innerText =
+    "Matched pairs: " + matchedPairs + " / " + dynamicCardList.length;
+    }
+
+    card1Selected = null;
+    card2Selected = null;
+
+    // Check if all pairs have been matched
+    if (matchedPairs >= dynamicCardList.length) {
+        finishGame();
+    }
+}
+
+// Save completed game
+function finishGame() {
+    if (scoreSubmitted) {
+        return;
+    }
+
+    scoreSubmitted = true;
+
+    var completionSeconds = Math.floor(
+        (Date.now() - gameStartedAt) / 1000
+    );
+
+    document.getElementById("gameStatus").innerText =
+        "Game completed! Saving your score...";
+
+    fetch("save_score.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            errors: errors,
+            completion_seconds: completionSeconds
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Failed to save score");
+        }
+        return response.json();
+    })
+    .then(data => {
+
+        if (data.success) {
+
+            document.getElementById("gameStatus").innerText =
+                "Game completed! Your score has been saved.";
+
+        } else {
+
+            document.getElementById("gameStatus").innerText =
+                "Game completed, but your score could not be saved.";
+
+        }
+
+    })
+    .catch(error => {
+
+        console.error(error);
+
+        document.getElementById("gameStatus").innerText =
+            "Unable to save score. Please try again.";
+
+    });
 }
