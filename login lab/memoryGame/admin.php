@@ -3,7 +3,7 @@ session_start();
 include('../db.php');
 
 if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit();
 }
 
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES['q_image']) && isset($
 <body>
 
     <div class="position-absolute top-0 end-0 p-3">
-        <a href="dashboard.php" class="btn btn-outline-light fw-bold shadow-sm">Back to Game</a>
+        <a href="Assets/game.php" class="btn btn-outline-light fw-bold shadow-sm">Back to Game</a>
     </div>
 
     <div class="container d-flex justify-content-center">

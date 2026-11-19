@@ -4,7 +4,7 @@ session_start();
 include('../db.php');
 
 if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit();
 }
 
@@ -115,7 +115,7 @@ if (!$result) {
     </div>
 
     <div class="text-center mt-4">
-        <a href="dashboard.php" class="btn btn-warning">
+        <a href="Assets/game.php" class="btn btn-warning">
             Back to Game
         </a>
     </div>
