@@ -72,19 +72,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES['question_image']) && 
     </div>
 
     <div class="position-absolute top-0 start-0 p-3">
-        <a href="dashboard.php" class="btn btn-warning fw-bold shadow-sm d-flex align-items-center gap-1" style="border-radius: 8px;">
-            <span>⬅️</span> Back to Dashboard
+        <a href="dashboard.php" class="btn btn-outline-light fw-bold shadow-sm">Back to Dashboard
         </a>
     </div>
 
     <div class="container d-flex justify-content-center">
         <div class="card glass-card p-4 text-white">
             
-            <h3 class="fw-bold text-center mb-4">⚙️ Upload Card Pair</h3>
+            <h3 class="fw-bold text-center mb-4">Upload Card Pair</h3>
 
             <form method="POST" enctype="multipart/form-data">
                 <div class="row">
-                    <!-- Question Card Inputs (Left Side) -->
+
                     <div class="col-md-6 mb-3">
                         <div class="p-3 border border-light rounded h-100" style="background: rgba(255, 255, 255, 0.05);">
                             <label for="q_name" class="form-label fw-bold">Question Card Name</label>
@@ -95,7 +94,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES['question_image']) && 
                         </div>
                     </div>
 
-                    <!-- Answer Card Inputs (Right Side) -->
                     <div class="col-md-6 mb-4">
                         <div class="p-3 border border-light rounded h-100" style="background: rgba(255, 255, 255, 0.05);">
                             <label for="a_name" class="form-label fw-bold">Answer Card Name</label>
@@ -108,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES['question_image']) && 
                 </div>
 
                 <div class="d-grid col-6 mx-auto mt-2">
-                    <button type="submit" class="btn btn-custom fw-bold py-2 shadow-sm">Upload Pair</button>
+                    <button type="submit" class="btn btn-outline-light fw-bold shadow-sm">Upload Pair</button>
                 </div>
             </form>
 

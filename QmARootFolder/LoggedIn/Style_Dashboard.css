@@ -1,0 +1,75 @@
+body {
+    background: linear-gradient(-45deg, #4f46e5, #7c3aed, #ec4899, #3b82f6);
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px 48px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: flex-start;
+    color: #ffffff;
+}
+
+.dashboard-left h1 {
+    margin: 0;
+    font-weight: 700;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.dashboard-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    min-width: 220px;
+}
+
+.dashboard-actions button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 10px;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: transform 0.15s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.dashboard-actions button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: #111827;
+    transform: translateX(-4px);
+}
+
+.dashboard-actions button.logout-btn:hover {
+    background: rgba(220, 38, 38, 0.9);
+    border-color: rgba(254, 202, 202, 0.8);
+    color: #ffffff;
+    transform: translateX(-4px);
+}
+
+.Logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  scale: calc(0.9);
+}
+
+.Logo:hover {
+  transform: rotate(3deg);
+  filter: drop-shadow(0 3px 3px rgb(255, 240, 215));
+}

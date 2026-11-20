@@ -42,12 +42,12 @@ $result = pg_query($conn, "SELECT username, is_admin, is_active FROM users ORDER
 <body>
 
 <div class="position-absolute top-0 start-0 p-3">
-    <a href="dashboard.php" class="btn btn-warning fw-bold">⬅️ Back to Dashboard</a>
+    <a href="dashboard.php" class="btn btn-outline-light fw-bold shadow-sm">Back to Dashboard</a>
 </div>
 
 <div class="container py-5 mt-4">
     <div class="card glass-card p-4 text-white mx-auto" style="max-width: 750px;">
-        <h3 class="fw-bold text-center mb-3">🛡️ Manage Accounts</h3>
+        <h3 class="fw-bold text-center mb-3">Manage Accounts</h3>
 
         <?php if ($msg != ""): ?>
             <div class="alert alert-success text-center py-2"><?php echo $msg; ?></div>

@@ -1,40 +1,62 @@
-body{
+body {
     background: linear-gradient(-45deg, #4f46e5, #7c3aed, #ec4899, #3b82f6);
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
 }
 
-.Logo{
+.login-panel {
+    background: rgba(255, 255, 255, 0.14);
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.3);
+}
+
+.login-section {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    padding: 0.9rem 1rem;
+}
+
+.login-panel .form-control {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+}
+
+.login-actions button,
+.login-actions .btn {
+    padding: 11px 22px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 10px;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: transform 0.15s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.login-actions button:hover,
+.login-actions .btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: #111827;
+    transform: translateX(-4px);
+}
+
+.Logo {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.5rem;
   transition: all 0.2s ease-in-out;
   scale: calc(0.9);
 }
 
 .Logo:hover {
-transform: rotate(3deg);
-filter: drop-shadow(0 3px 3px rgb(255, 240, 215));
-}
-
-.login_submit{
-  width: 100%;
-  padding: 0.85rem 1rem;
-  box-sizing: border-box;
-  
-  font-family:'Courier New', Courier, monospace;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #ffffff;
-  letter-spacing: 0.02em;
-  
-  background-color: #8f1452;
-  border: none;
-  border-radius: 8px;
-
-  transition: background-color 0.2s ease-in-out;
-}
-
-.login_submit:hover{
-    color:#111827;
-    background-color: #e5e7eb;
+  transform: rotate(3deg);
+  filter: drop-shadow(0 3px 3px rgb(255, 240, 215));
 }

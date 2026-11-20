@@ -1,40 +1,61 @@
-body{
-    background: linear-gradient(-45deg, #4f46e5, #7c3aed, #ec4899, #3b82f6)
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #4f46e5, #7c3aed, #ec4899, #3b82f6);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+.register-panel {
+    background: rgba(255, 255, 255, 0.14) !important;
+    border: 2px solid rgba(255, 255, 255, 0.45) !important;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.3);
 }
 
-.Logo{
+.register-section {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    padding: 0.9rem 1rem;
+}
+
+.register-section .form-control {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 8px;
+}
+
+.register-actions .btn {
+    padding: 11px 22px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.18) !important;
+    border: 1px solid rgba(255, 255, 255, 0.45) !important;
+    border-radius: 10px;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.15s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.register-actions .btn:hover {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #111827 !important;
+    border-color: rgba(255, 255, 255, 0.75) !important;
+    transform: translateX(-4px);
+}
+.Logo {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.5rem;
   transition: all 0.2s ease-in-out;
   scale: calc(0.9);
 }
 
 .Logo:hover {
-transform: rotate(3deg);
-filter: drop-shadow(0 3px 3px rgb(255, 240, 215));
-}
-
-.register_submit{
-  width: 100%;
-  padding: 0.85rem 1rem;
-  box-sizing: border-box;
-  
-  font-family:'Courier New', Courier, monospace;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #ffffff;
-  letter-spacing: 0.02em;
-  
-  background-color: #8f1452;
-  border: none;
-  border-radius: 8px;
-
-  transition: background-color 0.2s ease-in-out;
-}
-
-.register_submit:hover{
-    color:#111827;
-    background-color: #e5e7eb;
+  transform: rotate(3deg);
+  filter: drop-shadow(0 3px 3px rgb(255, 240, 215));
 }

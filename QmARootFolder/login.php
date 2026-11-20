@@ -35,45 +35,47 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="login_style.css" rel="stylesheet">
-    <title>QmA-Question Match Answer</title>
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="login_style.css">
 </head>
 
-<body>
-    <div class = "container min-vh-100 d-flex align-items-center justify-content-center">
-        <div class = "row w-100 align-items-center justify-content-between">
-            <div class = "col-md-5 text-center mb-4 mb-md-0">
-                <img class="Logo" src = "Style_Assets\Logo.png" alt = "Logo of the game">
+<body class="min-vh-100 d-flex align-items-center py-4 px-4 px-md-5">
+
+    <div class="container-fluid">
+        <div class="row align-items-center justify-content-between g-4">
+
+            <div class="col-12 col-md-7 d-flex justify-content-center align-items-center">
+                <img src="Style_Assets/Logo.png" alt="Logo" class="Logo img-fluid">
             </div>
-            <div class = "col-md-5 col-lg-4">
-                <div class = "card shadow-sm p-4">
+
+            <div class="col-12 col-md-5 d-flex justify-content-center align-items-center">
+                <div class="login-panel login-actions p-4 p-md-5 text-white w-100" style="max-width: 440px;">
+                    <h1 class="fw-bold mb-4 text-center" style="text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);">Login</h1>
+
                     <form method="POST">
-                        <div>     
-                            <label for = "username" class ="form-label fw-bold">USERNAME</label>
-                            <input type="text" name="username" class = "form-control" value="<?php echo (isset($_POST['username'])) ? htmlspecialchars($_POST['username']) : ""; ?>">
+                        <div class="login-section mb-3 text-start">
+                            <label for="username" class="form-label fw-semibold">Username</label>
+                            <input type="text" id="username" name="username" class="form-control" required>
                         </div>
-                        <br><br>
-                        <div>
-                            <label for="password" class="form-label fw-bold">PASSWORD</label>
-                            <input type="password" class="form-control" name="password">
+
+                        <div class="login-section mb-4 text-start">
+                            <label for="password" class="form-label fw-semibold">Password</label>
+                            <input type="password" id="password" name="password" class="form-control" required>
                         </div>
-                        <br><br>
-                        <button type="submit" class="login_submit">LOGIN</button>
+
+                        <div class="d-flex flex-column gap-3">
+                            <button type="submit" name="login" class="btn w-100">Login</button>
+                            <a href="register.php" class="btn w-100 text-decoration-none">Register</a>
+                        </div>
                     </form>
-                    <br><br>
-                    <div class="text-center">
-                        <a href="register.php" class = "text-decoration-none">REGISTER</a>
-                    </div>
-                    <br><br>
-                    <?php 
-                    foreach ($errors as $error) {
-                        echo "<div class='text-danger text-center fw-bold'>" . htmlspecialchars($error) . "</div>";
-                    }
-                    ?>
                 </div>
             </div>
+
         </div>
     </div>
+
 </body>
+
 </html>

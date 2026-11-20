@@ -43,33 +43,33 @@ if (!$result) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>QmA Leaderboard</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Style_Leaderboard.css">
 </head>
+<body>
 
-<body class="bg-dark text-white">
+    <!-- Top-Left Transparent Frosted Button -->
+    <div class="position-absolute top-0 start-0 p-3">
+        <a href="AssetsAndGame/game.php" class="btn leaderboard-nav-btn">Back to Game</a>
+    </div>
 
-<div class="container mt-5">
+    <div class="container" style="max-width: 960px;">
+        <h1 class="leaderboard-title text-center mb-4">QmA Leaderboard</h1>
 
-    <h1 class="text-center mb-4">QmA Leaderboard</h1>
-
-    <div class="table-responsive">
-
-        <table class="table table-dark table-striped table-bordered text-center">
-
-            <thead>
-                <tr>
-                    <th>Rank</th>
-                    <th>Username</th>
-                    <th>Errors</th>
-                    <th>Completion Time</th>
-                </tr>
-            </thead>
-
-            <tbody>
+        <div class="leaderboard-panel">
+            <div class="table-responsive">
+                <table class="table leaderboard-table text-center">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Username</th>
+                            <th>Errors</th>
+                            <th>Completion Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
                 <?php
                 $rank = 1;
@@ -107,20 +107,11 @@ if (!$result) {
                     $rank++;
                 endwhile;
                 ?>
-
-            </tbody>
-
-        </table>
-
+                </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-
-    <div class="text-center mt-4">
-        <a href="AssetsAndGame/game.php" class="btn btn-warning">
-            Back to Game
-        </a>
-    </div>
-
-</div>
 
 </body>
 </html>

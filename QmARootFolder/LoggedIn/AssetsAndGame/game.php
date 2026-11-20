@@ -29,6 +29,7 @@ while ($row = pg_fetch_assoc($result)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QmA-Question-Match-Answer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../cards.css">
     <script>
@@ -38,26 +39,20 @@ while ($row = pg_fetch_assoc($result)) {
 </head>
 <body>
 
-        <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true): ?>
-        <div class="position-absolute top-0 end-0 p-3">
-            
-            <a href="../adminUploadCards.php" class="btn btn-warning fw-bold shadow-sm d-flex align-items-center gap-1" style="border-radius: 8px;">
-                <span>⚙️</span> Upload Cards</a>
-        </div>
-         <?php endif; ?>
+<div class="position-absolute top-0 start-0 p-3">
+    <a href="../dashboard.php" class="btn game-nav-btn">Back to Dashboard</a>
+</div>
 
-        <div class="position-absolute top-0 start-0 p-3">
-            <a href="../dashboard.php" class="btn btn-warning fw-bold shadow-sm d-flex align-items-center gap-1" style="border-radius: 8px;">
-                <span>⬅️</span> Back to Dashboard</a>
-        </div>
+<div class="position-absolute top-0 end-0 p-3 d-flex align-items-center gap-2">
+    <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true): ?>
+        <a href="../adminUploadCards.php" class="btn game-nav-btn">Upload Cards</a>
+    <?php endif; ?>
+    <a href="../leaderboard.php" class="btn game-nav-btn">View Leaderboard</a>
+</div>
 
     <h2 class="text-white mt-4">Errors: <span id="errors">0</span></h2>
     <div id="gameStatus" class="text-white mt-3"></div>
     <div id="board"></div>
-    
 
-<a href="../leaderboard.php" class="btn btn-warning mt-3">
-    View Leaderboard
-</a>
 </body>
 </html>
