@@ -115,7 +115,7 @@ if (!$result) {
     </div>
 
     <div class="text-center mt-4">
-        <a href="Assets/game.php" class="btn btn-warning">
+        <a href="AssetsAndGame/game.php" class="btn btn-warning">
             Back to Game
         </a>
     </div>

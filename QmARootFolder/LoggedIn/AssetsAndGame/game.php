@@ -40,13 +40,20 @@ while ($row = pg_fetch_assoc($result)) {
 
         <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true): ?>
         <div class="position-absolute top-0 end-0 p-3">
-            <a href="../admin.php" class="btn btn-warning fw-bold shadow-sm d-flex align-items-center gap-1" style="border-radius: 8px;">
+            
+            <a href="../adminUploadCards.php" class="btn btn-warning fw-bold shadow-sm d-flex align-items-center gap-1" style="border-radius: 8px;">
                 <span>⚙️</span> Upload Cards</a>
+        </div>
+
+        <div class="position-absolute top-0 start-0 p-3">
+            <a href="../dashboard.php" class="btn btn-warning fw-bold shadow-sm d-flex align-items-center gap-1" style="border-radius: 8px;">
+                <span>⬅️</span> Back to Dashboard</a>
         </div>
     <?php endif; ?>
     <h2 class="text-white mt-4">Errors: <span id="errors">0</span></h2>
-    <div id="board"></div>
     <div id="gameStatus" class="text-white mt-3"></div>
+    <div id="board"></div>
+    
 
 <a href="../leaderboard.php" class="btn btn-warning mt-3">
     View Leaderboard

@@ -50,8 +50,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES['q_image']) && isset($
 <body>
 
     <div class="position-absolute top-0 end-0 p-3">
-        <a href="Assets/game.php" class="btn btn-outline-light fw-bold shadow-sm">Back to Game</a>
+        <a href="AssetsAndGame/game.php" class="btn btn-outline-light fw-bold shadow-sm">Back to Game</a>
     </div>
+
+     <div class="position-absolute top-0 start-0 p-3">
+            <a href="dashboard.php" class="btn btn-warning fw-bold shadow-sm d-flex align-items-center gap-1" style="border-radius: 8px;">
+                <span>⬅️</span> Back to Dashboard</a>
+        </div>
 
     <div class="container d-flex justify-content-center">
         <div class="card glass-card p-4 text-white w-150">

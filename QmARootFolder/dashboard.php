@@ -1,6 +1,6 @@
 <?php
 session_start();
-header("Location: memoryGame/dashboard.php");
+header("Location: LoggedIn/dashboard.php");
 include('db.php');
 
 if (!isset($_SESSION['username'])) {
