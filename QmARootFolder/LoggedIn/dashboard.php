@@ -26,6 +26,7 @@ $isAdmin = isset($_SESSION['is_admin']) && ($_SESSION['is_admin'] === true || $_
     <button type="button" onclick="location.href='profile.php'">Profile</button>
     <?php if ($isAdmin): ?>
         <button type="button" onclick="location.href='adminUploadCards.php'">Upload Cards</button>
+        <button type="button" onclick="location.href='manageAccounts.php'">Manage Accounts</button>
     <?php endif; ?>
     <button type="button" onclick="location.href='../logout.php'">Logout</button>
 
